@@ -14,39 +14,41 @@ body {
 }
 
 header {
-  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 200px;
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
-header h1, header h2 {
+header h1 {
   font-size: 48px;
   font-weight: bold;
   background: rgba(0, 0, 64, 0.6);
   padding: 10px 20px;
   border-radius: 12px;
-  text-shadow: 1px 1px 2px black;
+  text-shadow: 1px 1px 5px black;
 }
 
+/* Content Section */
 .content {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px;
+  padding: 40px 20px;
 }
 
+/* Navigation Buttons */
 .nav-buttons {
   margin-top: 30px;
   display: flex;
-  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
 .nav-buttons a {
@@ -64,30 +66,78 @@ header h1, header h2 {
   background-color: #2a5298;
 }
 
+/* Table Styling */
 table {
-  width: 80%;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 40px;
   border-collapse: collapse;
   background: linear-gradient(to right, #1e3c72, #2a5298);
-  margin: 30px auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  overflow-x: auto;
+  display: block;
 }
 
 th, td {
   border: 2px solid rgba(255, 255, 255, 0.5);
-  padding: 20px;
+  padding: 15px;
   font-size: 20px;
   text-align: left;
   background-color: transparent;
+  color: white;
 }
 
 th {
   background-color: rgba(10, 20, 60, 0.85);
-  color: white;
 }
 
+/* Responsive Media Queries */
+@media screen and (max-width: 768px) {
+  header {
+    height: 150px;
+    padding: 0 20px;
+  }
+
+  header h1 {
+    font-size: 28px;
+    padding: 8px 16px;
+  }
+
+  .nav-buttons a {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+
+  th, td {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .content {
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  header h1 {
+    font-size: 22px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-buttons a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Optional Footer */
 footer {
   text-align: center;
   padding: 20px;
   background-color: rgba(0,0,0,0.2);
-  font-size: 16px;
+  font-size: 14px;
 }
